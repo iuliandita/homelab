@@ -1,11 +1,13 @@
-# Khue's Homelab
+# Iulian's Homelab
 
-**[Features](#features) • [Get Started](#get-started) • [Documentation](https://homelab.khuedoan.com)**
+**[Features](#features) • [Get Started](#get-started) • [Documentation](https://homelab.iuliandita.com)**
 
-[![tag](https://img.shields.io/github/v/tag/khuedoan/homelab?style=flat-square&logo=semver&logoColor=white)](https://github.com/khuedoan/homelab/tags)
-[![document](https://img.shields.io/website?label=document&logo=gitbook&logoColor=white&style=flat-square&url=https%3A%2F%2Fhomelab.khuedoan.com)](https://homelab.khuedoan.com)
-[![license](https://img.shields.io/github/license/khuedoan/homelab?style=flat-square&logo=gnu&logoColor=white)](https://www.gnu.org/licenses/gpl-3.0.html)
-[![stars](https://img.shields.io/github/stars/khuedoan/homelab?logo=github&logoColor=white&color=gold&style=flat-square)](https://github.com/khuedoan/homelab)
+[![tag](https://img.shields.io/github/v/tag/iuliandita/homelab?style=flat-square&logo=semver&logoColor=white)](https://github.com/iuliandita/homelab/tags)
+[![document](https://img.shields.io/website?label=document&logo=gitbook&logoColor=white&style=flat-square&url=https%3A%2F%2Fhomelab.iuliandita.com)](https://homelab.iuliandita.com)
+[![license](https://img.shields.io/github/license/iuliandita/homelab?style=flat-square&logo=gnu&logoColor=white)](https://www.gnu.org/licenses/gpl-3.0.html)
+[![stars](https://img.shields.io/github/stars/iuliandita/homelab?logo=github&logoColor=white&color=gold&style=flat-square)](https://github.com/iuliandita/homelab)
+
+***This project was forked and based on [Khue's Homelab](https://github.com/khuedoan/homelab). Adjusted, modified and extended for my needs.***
 
 This project utilizes [Infrastructure as Code](https://en.wikipedia.org/wiki/Infrastructure_as_code) and [GitOps](https://www.weave.works/technologies/gitops) to automate provisioning, operating, and updating self-hosted services in my homelab.
 It can be used as a highly customizable framework to build your own homelab.
@@ -24,17 +26,59 @@ Expect breaking changes that may require a complete redeployment.
 A proper upgrade path is planned for the stable release.
 More information can be found in [the roadmap](#roadmap) below.
 
+It is designed as a full homelab environment. I use it for self-hosting services for me and my family, testing new tools and learning new technologies.
+
+**This repository is a *public* version. It is sanitized to not include sensible information. I have a mirror repository, hosted privately, which holds the *real* data.**
+
 ### Hardware
 
-![Hardware](https://user-images.githubusercontent.com/27996771/98970963-25137200-2543-11eb-8f2d-f9a2d45756ef.JPG)
+<!-- TODO: migrate this liste to a table, add network info, default credentials? -->
 
-- 4 × NEC SFF `PC-MK26ECZDR` (Japanese version of the ThinkCentre M700):
-    - CPU: `Intel Core i5-6600T @ 2.70GHz`
-    - RAM: `16GB`
-    - SSD: `128GB`
-- TP-Link `TL-SG108` switch:
-    - Ports: `8`
-    - Speed: `1000Mbps`
+<details>
+<summary>Click here to view my hardware setup.</summary>
+
+- HP ElitedeskDesk SFF
+  - CPU: `???` <!-- TODO: -->
+  - RAM: `32GB`
+  - storage: `2TB NVME`
+  - OS: `Proxmox VE 7.4`
+  - role: main Proxmox host
+- HP ProDesk SFF
+  - CPU: `4 x Intel(R) Core(TM) i5-6500T CPU @ 2.50GHz`
+  - RAM: `16GB`
+  - storage: `2TB SSD`
+  - OS: `Proxmox VE 7.4`
+  - role: secondary Proxmox host
+- Raspberry Pi 4
+  - CPU: `???` <!-- TODO: -->
+  - RAM: `4GB`
+  - storage: `16GB SD`
+  - OS: `Pimox 7`
+  - role: tertiary proxmox host & cluster quorum voter
+- 3 Dell Wyse
+  - CPU: `???` <!-- TODO: -->
+  - RAM: `???` <!-- TODO: -->
+  - storage: `???` <!-- TODO: -->
+  - OS: `???` <!-- TODO: -->
+  - role: test Kubernetes cluster
+- HP `D610+` ThinClient
+  - CPU: `AMD GX-420CA SOC with Radeon(tm) HD Graphics (4 cores, 4 threads)`
+  - RAM: `4GB`
+  - storage: `32GB SSD`
+  - OS: `OPNSENSE 23.1`
+  - role: router & firewall
+- ZyXEL `GS1100-16` switch:
+  - Ports: `16`
+  - Speed: `1000Mbps`
+- D-Link switch `???` <!-- TODO: -->
+- 4 port switch `???` <!-- TODO: -->
+- UPS `???` <!-- TODO: -->
+
+</details>
+
+### Network topology
+
+- subnet 10.0.0.0/24 `???` <!-- TODO: -->
 
 ### Features
 
@@ -60,6 +104,9 @@ More information can be found in [the roadmap](#roadmap) below.
 
 Some demo videos and screenshots are shown here.
 They can't capture all the project's features, but they are sufficient to get a concept of it.
+
+<details>
+<summary>Click here to view the demo videos. </summary>
 
 | Demo                                                                                        |
 | :--:                                                                                        |
@@ -95,7 +142,12 @@ They can't capture all the project's features, but they are sufficient to get a 
 [lens-demo]: https://user-images.githubusercontent.com/27996771/149448896-9d79947d-468c-45c6-a81d-b43654e8ab6b.png
 [vault-demo]: https://user-images.githubusercontent.com/27996771/149452309-de4a893b-e94c-4ba8-9119-ea87449cf77e.png
 
+</details>
+
 ### Tech stack
+
+<details>
+<summary>Click here to view the tech stack. </summary>
 
 <table>
     <tr>
@@ -215,27 +267,29 @@ They can't capture all the project's features, but they are sufficient to get a 
     </tr>
 </table>
 
+</details>
+
 ## Get Started
 
-- [Try it out locally](https://homelab.khuedoan.com/installation/sandbox) without any hardware (just 4 commands!)
-- [Deploy on real hardware](https://homelab.khuedoan.com/installation/production/prerequisites) for production workload
+- [Try it out locally](https://homelab.iuliandita.com/installation/sandbox) without any hardware (just 4 commands!)
+- [Deploy on real hardware](https://homelab.iuliandita.com/installation/production/prerequisites) for production workload
 
 ## Roadmap
 
-See [roadmap](https://homelab.khuedoan.com/reference/roadmap) and [open issues](https://github.com/khuedoan/homelab/issues) for a list of proposed features and known issues.
+See [roadmap](https://homelab.iuliandita.com/reference/roadmap) and [open issues](https://github.com/iuliandita/homelab/issues) for a list of proposed features and known issues.
 
 ## Contributing
 
 Any contributions you make are greatly appreciated.
 
-Please see [contributing guide](https://homelab.khuedoan.com/reference/contributing) for more information.
+Please see [contributing guide](https://homelab.iuliandita.com/reference/contributing) for more information.
 
 ## License
 
-Copyright &copy; 2020 - 2022 Khue Doan
+Copyright &copy; 2023 Iulian Dita
 
 Distributed under the GPLv3 License.
-See [license page](https://homelab.khuedoan.com/reference/license) or `LICENSE.md` file for more information.
+See [license page](https://homelab.iuliandita.com/reference/license) or `LICENSE.md` file for more information.
 
 ## Acknowledgements
 
@@ -273,4 +327,4 @@ If you feel you're missing from this list, feel free to add yourself in a PR.
 
 ## Stargazers over time
 
-[![Stargazers over time](https://starchart.cc/khuedoan/homelab.svg)](https://starchart.cc/khuedoan/homelab)
+[![Stargazers over time](https://starchart.cc/iuliandita/homelab.svg)](https://starchart.cc/iuliandita/homelab)

@@ -4,19 +4,19 @@ Open the [tools container](../../concepts/tools-container.md), which includes al
 
 === "Docker"
 
-    ```sh
-    make tools
-    ```
+```sh
+make tools
+```
 
 === "Nix"
 
-    ```sh
-    nix-shell
-    ```
+```sh
+nix-shell
+```
 
 !!! note
 
-     It will take a while to build the tools container on the first time
+It will take a while to build the tools container on the first time
 
 Run the following script to configure the homelab:
 
@@ -26,13 +26,13 @@ make configure
 
 !!! example
 
-    <!-- TODO update example input -->
+<!-- TODO: update example input -->
 
-    ```
-    Text editor (nvim):
-    Enter seed repo (github.com/khuedoan/homelab): github.com/example/homelab
-    Enter your domain (khuedoan.com): example.com
-    ```
+```sh
+Text editor (nvim):
+Enter seed repo (github.com/iuliandita/homelab): github.com/example/homelab
+Enter your domain (iuliandita.com): example.com
+```
 
 It will prompt you to edit the inventory:
 
@@ -43,10 +43,10 @@ It will prompt you to edit the inventory:
 
 !!! example
 
-    ```yaml title="metal/inventories/prod.yml"
-    --8<--
-    metal/inventories/prod.yml
-    --8<--
-    ```
+```yaml title="metal/inventories/prod.yml"
+--8<--
+metal/inventories/prod.yml
+--8<--
+```
 
 At the end it will show what has changed. After examining the diff, commit and push the changes.

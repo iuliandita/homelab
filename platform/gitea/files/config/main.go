@@ -1,6 +1,6 @@
 package main
 
-// TODO WIP clean this up
+// TODO: WIP clean this up
 
 import (
 	"log"

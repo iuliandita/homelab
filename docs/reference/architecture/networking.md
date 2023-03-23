@@ -20,4 +20,4 @@ flowchart TD
   Internet -- inbound --> Cloudflare
 ```
 
-TODO (PR welcomed)
+TODO: (PR welcomed)

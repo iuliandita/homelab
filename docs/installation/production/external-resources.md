@@ -36,14 +36,14 @@ If you decide to use a [different Terraform backend](https://www.terraform.io/la
 - Get Cloudflare email and account ID
 - Global API key: <https://dash.cloudflare.com/profile/api-tokens>
 
-<!-- TODO switch to API token instead of API key? -->
+<!-- TODO: switch to API token instead of API key? -->
 <!-- Terraform API token summary: -->
 
 <!-- ``` -->
 <!-- This API token will affect the below accounts and zones, along with their respective permissions -->
 
-<!-- └── Khue Doan - Argo Tunnel:Edit, Account Settings:Read -->
-<!--     └── khuedoan.com - Zone:Read, DNS:Edit -->
+<!-- └── Iulian Dita - Argo Tunnel:Edit, Account Settings:Read -->
+<!--     └── iuliandita.com - Zone:Read, DNS:Edit -->
 
 <!-- Client IP Address Filtering -->
 
