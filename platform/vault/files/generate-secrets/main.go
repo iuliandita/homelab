@@ -1,6 +1,6 @@
 package main
 
-// TODO WIP clean up
+// TODO: WIP clean up
 
 import (
 	"fmt"

@@ -1,3 +1,3 @@
 # Gitea
 
-TODO (PR welcomed)
+TODO: (PR welcomed)

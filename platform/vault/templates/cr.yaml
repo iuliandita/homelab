@@ -74,7 +74,7 @@ spec:
     spec:
       ingressClassName: nginx
       rules:
-        - host: &host vault.khuedoan.com
+        - host: &host vault.iuliandita.com
           http:
             paths:
               - backend:
@@ -125,7 +125,7 @@ spec:
     listener:
       tcp:
         address: "0.0.0.0:8200"
-        # TODO enable TLS?
+        # TODO: enable TLS?
         tls_disable: true
         # tls_cert_file: /vault/tls/server.crt
         # tls_key_file: /vault/tls/server.key

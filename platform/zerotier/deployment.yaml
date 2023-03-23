@@ -17,16 +17,16 @@ spec:
     spec:
       containers:
         - name: zerotier-router
-          image: zerotier/zerotier:latest  # TODO use tag
+          image: zerotier/zerotier:latest  # TODO: use tag
           command:
             - "sh"
             - "-c"
-          args: # TODO optimize this
+          args: # TODO: optimize this
             - |
-              # TODO install this on upstream image?
+              # TODO: install this on upstream image?
               apt-get install -y iptables
 
-              # TODO is there a better way to get the interface name?
+              # TODO: is there a better way to get the interface name?
               export PHY_IFACE="$(ip route | grep ${POD_IP} | cut -d ' ' -f 3)"
               export ZT_IFACE=zt0
 
